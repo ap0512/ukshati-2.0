@@ -1,6 +1,7 @@
 // Import necessary dependencies
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React , { useEffect} from 'react';
+
+import { NavLink, useLocation } from 'react-router-dom';
 import { 
   FaFacebook, FaTwitter, FaLinkedin, FaYoutube, 
   FaAndroid, FaInstagram, FaMapMarker, FaEnvelope, FaPhone 
@@ -8,6 +9,29 @@ import {
 
 // Define the Footer component
 const Footer = () => {
+
+  const getyear = new Date().getFullYear()
+  
+  const location = useLocation();
+
+  // Handle scrolling after navigation
+  useEffect(() => {
+    // Check if we have a hash in the URL
+    if (location.hash === '#services') {
+      // Small delay to ensure the page has rendered
+      setTimeout(() => {
+        const element = document.getElementById('services');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        
+        setTimeout(() => {
+          window.scrollBy(0, -50); // Adjust as needed
+        }, 500);
+      }
+      }, 100);
+    }
+  }, [location]); // Re-run when location changes
+
   return (
     <footer className="bg-gray-900 text-white text-sm">
       
@@ -48,11 +72,35 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><NavLink to="/" className="text-gray-300 hover:text-white">Home</NavLink></li>
               <li><NavLink to="/about" className="text-gray-300 hover:text-white">About</NavLink></li>
-              <li><NavLink to="/service" className="text-gray-300 hover:text-white">Service</NavLink></li>
+              <li>
+                <NavLink 
+                  to="/#services" 
+                  className="text-gray-300 hover:text-white"
+                  onClick={(e) => {
+                    if (location.pathname === '/') {
+                      // If we're already on home page, just scroll
+                      e.preventDefault();
+                      const element = document.getElementById('services');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      
+                      setTimeout(() => {
+                        window.scrollBy(0, -50); // Adjust as needed
+                      }, 500);
+                    }
+                    }
+                    // If we're on another page, let the normal navigation happen
+                    // The useEffect above will handle the scrolling after navigation
+                  }}
+                >
+                  Services
+              </NavLink>
+              </li>
               <li><NavLink to="/product" className="text-gray-300 hover:text-white">Products</NavLink></li>
               <li><NavLink to="/contact" className="text-gray-300 hover:text-white">Contact</NavLink></li>
               <li><NavLink to="/blog" className="text-gray-300 hover:text-white">Blog</NavLink></li>
             </ul>
+            
           </div>
 
           {/* ==== Contact Information Section ==== */}
@@ -74,7 +122,7 @@ const Footer = () => {
       {/* ====== Copyright Section ====== */}
       <div className="text-center py-3 bg-gray-800">
         <span className="text-gray-400">
-          © 2021 <span className="text-green-400">Ukshati Technologies</span>. All rights reserved.
+          © {getyear} <span className="text-green-400">Ukshati Technologies</span>. All rights reserved.
         </span>
       </div>
 
