@@ -1,6 +1,6 @@
 // Import necessary dependencies
-import React , { useEffect} from 'react';
 
+import React , { useEffect} from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { 
   FaFacebook, FaTwitter, FaLinkedin, FaYoutube, 
@@ -122,7 +122,9 @@ const Footer = () => {
       {/* ====== Copyright Section ====== */}
       <div className="text-center py-3 bg-gray-800">
         <span className="text-gray-400">
+
           © {getyear} <span className="text-green-400">Ukshati Technologies</span>. All rights reserved.
+
         </span>
       </div>
 
