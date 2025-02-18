@@ -1,0 +1,4 @@
+/* Push the entire About section content down */
+.about-content {
+    margin-top: 100px; /* Adjust this value as needed */
+}
