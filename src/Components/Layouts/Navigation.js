@@ -1,7 +1,7 @@
 // Import necessary dependencies
 import React, { useState } from 'react'; // Import React and useState hook for managing component state
-import { NavLink } from 'react-router-dom'; // Import NavLink from React Router for navigation
 import { FaUserCircle } from 'react-icons/fa'; // Import user icon from react-icons library
+import { NavLink } from 'react-router-dom'; // Import NavLink from React Router for navigation
 import "../Styles/Navigation.css"; // Import external CSS for styling
 
 // Define the Navigation component
@@ -116,3 +116,4 @@ const Navigation = () => {
 };
 
 export default Navigation; // Export the component for use in other parts of the application
+

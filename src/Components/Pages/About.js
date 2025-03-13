@@ -6,7 +6,7 @@ const About = () => {
   return (
     <Layout>
       {/* Background Section */}
-      <div className="bg-gradient-to-b from-white to-gray-100 py-20 mt-20 md:mt-24">
+      <div className="bg-gradient-to-b from-white to-gray-100 py-20 mt-20 md:mt-18">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             

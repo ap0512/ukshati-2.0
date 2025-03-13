@@ -1,9 +1,9 @@
 import React from "react";
-import { services } from "../Utils/Data";
-import Slider from "react-slick";
 import Card from "react-bootstrap/Card";
-import "slick-carousel/slick/slick.css";
+import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import { services } from "../Utils/Data";
 
 const Services = () => {
   const settings = {
