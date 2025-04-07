@@ -1,0 +1,91 @@
+.product-section h1 {
+  color: #87a922;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border: #fafcf9;
+}
+
+.product-section {
+  margin-top: 60px;
+}
+
+.products {
+  margin-top: 40px;
+}
+
+.custom-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2a2a2a;
+}
+
+.custom-description {
+  font-size: 1rem;
+  color: #6c757d;
+  line-height: 1.5;
+  height: 3rem; /* Set a fixed height for descriptions */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.custom-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Ensure all cards have the same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; /* Center content */
+  overflow: hidden; /* Prevent unwanted cropping */
+  text-align: center;
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Fix for zoomed-in images */
+.custom-card-img {
+  width: 100%; /* Ensure images take up full width */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 200px; /* Prevents excessive image size */
+  object-fit: contain; /* Ensures the full image is visible without zooming */
+  border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+/* Ensure images are properly sized inside their container */
+.custom-card-img img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .custom-title {
+      font-size: 1.5rem;
+  }
+
+  .custom-description {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-title {
+      font-size: 1.2rem;
+  }
+
+  .custom-description {
+      font-size: 0.85rem;
+  }
+
+  .custom-card-img {
+      max-width: 100%;
+      max-height: 150px; /* Adjust for smaller screens */
+  }
+}
